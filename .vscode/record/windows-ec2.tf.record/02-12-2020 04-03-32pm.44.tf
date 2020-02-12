@@ -24,4 +24,3 @@ resource "aws_security_group" "allow_rdp" {
 
     cidr_blocks =  ["0.0.0.0/0"]
   }
-}
