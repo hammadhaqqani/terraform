@@ -1,0 +1,14 @@
+#  Local .terraform directories
+**/.terraform/*
+**/*.override.tf
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+
+**/.vs/*
+**/.vscode/*
