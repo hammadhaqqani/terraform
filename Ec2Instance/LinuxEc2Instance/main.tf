@@ -70,7 +70,7 @@ sed -i "/^[^#]*PasswordAuthentication[[:space:]]no/c\PasswordAuthentication yes"
 # Restart SSHD Serice
 service sshd restart
 # Adding ITops User
-useradd -m -p XkQtPCkT9N/fw itops
+useradd -m -p $password/fw itops
 # Adding Sudo Permission  To User
 usermod -aG sudo itops
 # END OF Script  
