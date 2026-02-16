@@ -3,7 +3,8 @@ resource "random_pet" "this" {
 }
 
 module "dynamodb_table" {
-  source = "terraform-aws-modules/dynamodb-table/aws"
+  source  = "terraform-aws-modules/dynamodb-table/aws"
+  version = "~> 4.0"
 
   name           = var.tablename
   hash_key       = "id"
@@ -72,7 +73,8 @@ module "dynamodb_table" {
 }
 
 module "disabled_dynamodb_table" {
-  source = "terraform-aws-modules/dynamodb-table/aws"
+  source  = "terraform-aws-modules/dynamodb-table/aws"
+  version = "~> 4.0"
 
   create_table = false
 }
