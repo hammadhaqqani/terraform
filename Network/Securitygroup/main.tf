@@ -30,7 +30,7 @@ data "aws_security_group" "default" {
 #####
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "3.0.0"
+  version = "~> 5.0"
 
   identifier = var.identifier
 
@@ -75,7 +75,7 @@ module "db" {
   major_engine_version = "9.6"
 
   # Snapshot name upon DB deletion
-  final_snapshot_identifier = "demodb"
+  final_snapshot_identifier_prefix = "demodb"
 
   # Database Deletion Protection
   deletion_protection = false
