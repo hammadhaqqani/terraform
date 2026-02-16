@@ -66,7 +66,7 @@ module "db" {
   subnet_ids = data.aws_subnets.all.ids
 
   # Snapshot name upon DB deletion
-  final_snapshot_identifier = var.identifier
+  final_snapshot_identifier_prefix = var.identifier
 
   create_db_parameter_group = false
   license_model             = "license-included"

@@ -75,7 +75,7 @@ module "db" {
   major_engine_version = "9.6"
 
   # Snapshot name upon DB deletion
-  final_snapshot_identifier = "demodb"
+  final_snapshot_identifier_prefix = "demodb"
 
   # Database Deletion Protection
   deletion_protection = false
