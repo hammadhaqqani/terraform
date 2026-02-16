@@ -7,27 +7,27 @@ variable "availability_zone" {
 
 variable "hostname" {
   description = "Host name of EC2 Machine"
-  default = "Dev-Test-Instance"
+  default     = "Dev-Test-Instance"
 }
 
 variable "role" {
   description = "Role of the EC2 Machine"
-  default = "Database"
+  default     = "Database"
 }
 
 variable "xmcc" {
   description = "Cost Center"
-  default = "9243"
+  default     = "9243"
 }
 
 variable "appname" {
   description = "Application Name"
-  default = "ITOPS"
+  default     = "ITOPS"
 }
 
 variable "dpstate" {
   description = "DeploymentState"
-  default = "Dev"
+  default     = "Dev"
 }
 
 
@@ -36,20 +36,20 @@ variable "rdsname" {
 }
 
 variable "username" {
-  description = "Username for RDS Instance"  
+  description = "Username for RDS Instance"
 }
 
 variable "password" {
-  description = "Password for RDS Instance"  
+  description = "Password for RDS Instance"
 }
 
 
 variable "instanceclass" {
   description = "DB Instance Size"
-  default = "db.m5.xlarge"  
+  default     = "db.m5.xlarge"
 }
 
 variable "identifier" {
   description = "Identifier name for instance"
-  default = "terraformtest"  
+  default     = "terraformtest"
 }

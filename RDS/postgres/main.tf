@@ -3,7 +3,7 @@
 # Data sources to get VPC, subnets and security group details
 ##############################################################
 data "aws_vpc" "default" {
-   tags = {
+  tags = {
     Name = "usw2-dev1"
   }
 }
@@ -52,10 +52,10 @@ module "db" {
   backup_retention_period = 0
 
   tags = {
-    Name = var.identifier
-    Role = var.role
-    XMCC = var.xmcc
-    APPNAME = var.appname
+    Name            = var.identifier
+    Role            = var.role
+    XMCC            = var.xmcc
+    APPNAME         = var.appname
     DeploymentState = var.dpstate
   }
 

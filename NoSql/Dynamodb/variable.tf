@@ -1,29 +1,29 @@
 variable "name" {
   description = "Name of the VPC"
-  default = "staging-vpc"
+  default     = "staging-vpc"
 }
 
 variable "role" {
   description = "Role of the EC2 Machine"
-  default = "VPC"
+  default     = "VPC"
 }
 
 variable "xmcc" {
   description = "Cost Center"
-  default = "9240"
+  default     = "9240"
 }
 
 variable "appname" {
   description = "Application Name"
-  default = "ITOPS"
+  default     = "ITOPS"
 }
 
 variable "dps" {
   description = "DeploymentState"
-  default = "Staging"
+  default     = "Staging"
 }
 
 variable "tablename" {
   description = "Dynamodb Table Name"
-  default = "TerraformTest"
+  default     = "TerraformTest"
 }

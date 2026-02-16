@@ -138,5 +138,5 @@ resource "aws_instance" "ec2Instances" {
 }
 
 output "ec2_ip_address" {
-  value = "${aws_instance.ec2Instances.0.private_ip}"
+  value = aws_instance.ec2Instances.0.private_ip
 }

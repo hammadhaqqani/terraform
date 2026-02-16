@@ -2,7 +2,7 @@
 # Data sources to get VPC, subnets and security group details
 ##############################################################
 data "aws_vpc" "default" {
-   tags = {
+  tags = {
     Name = "usw2-dev1"
   }
 }
@@ -102,11 +102,11 @@ module "example" {
 
   tags = [
     {
-      Name = var.hostname
-      Role = var.role
-      XMCC = var.xmcc
-      APPNAME = var.appname
-      DeploymentState = var.dpstate   
+      Name            = var.hostname
+      Role            = var.role
+      XMCC            = var.xmcc
+      APPNAME         = var.appname
+      DeploymentState = var.dpstate
     },
     {
       key                 = "Project"
@@ -116,7 +116,7 @@ module "example" {
   ]
 
   tags_as_map = {
-    Testing = "IAC"
+    Testing   = "IAC"
     Terraform = "AWSTF"
   }
 }

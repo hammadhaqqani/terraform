@@ -3,7 +3,7 @@
 # Data sources to get VPC, subnets and security group details
 ##############################################################
 data "aws_vpc" "default" {
-   tags = {
+  tags = {
     Name = "usw2-dev1"
   }
 }
@@ -37,10 +37,10 @@ module "db" {
   storage_encrypted = false
   license_model     = "bring-your-own-license"
 
-  name     = var.rdsname
-  username = var.username
-  password = var.password
-  port     = "1521"
+  name                                = var.rdsname
+  username                            = var.username
+  password                            = var.password
+  port                                = "1521"
   iam_database_authentication_enabled = false
 
   vpc_security_group_ids = ["${data.aws_security_group.default.id}"]
@@ -54,10 +54,10 @@ module "db" {
   backup_retention_period = 0
 
   tags = {
-    Name = var.identifier
-    Role = var.role
-    XMCC = var.xmcc
-    APPNAME = var.appname
+    Name            = var.identifier
+    Role            = var.role
+    XMCC            = var.xmcc
+    APPNAME         = var.appname
     DeploymentState = var.dpstate
   }
 
@@ -78,9 +78,9 @@ module "db" {
 
   # Database Deletion Protection
   deletion_protection = false
-} 
+}
 
- 
- 
 
- 
+
+
+

@@ -107,13 +107,13 @@ module "vpc" {
   create_flow_log_cloudwatch_log_group = true
   create_flow_log_cloudwatch_iam_role  = true
 
-tags = {
-  Name = var.name
-  Role = var.role
-  XMCC = var.xmcc
-  APPNAME = var.appname
-  DeploymentState = var.dps
-}
+  tags = {
+    Name            = var.name
+    Role            = var.role
+    XMCC            = var.xmcc
+    APPNAME         = var.appname
+    DeploymentState = var.dps
+  }
 
   vpc_endpoint_tags = {
     Project  = "IAC"

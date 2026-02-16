@@ -8,58 +8,58 @@ variable "availability_zone" {
 # this is a keyName for key pairs
 variable "aws_key_name" {
   description = "Key Pair Name used to provision to the box"
-  default = "us-west-2-provisioner"
+  default     = "us-west-2-provisioner"
 }
 
 variable "inst_ami" {
   description = "Amazon Machine Image for the Instance"
-  default = "ami-059377ba193aa9309"
+  default     = "ami-059377ba193aa9309"
 }
 
 variable "inst_type" {
   description = "type of instances to provision"
-  default = "t2.xlarge"
+  default     = "t2.xlarge"
 }
 
 variable "vpc_public_sg_id" {
   description = "VPC public security group"
-  default = ""
+  default     = ""
 }
 
 variable "vpc_id" {
   description = "VPC public subnet"
-  default = "vpc-d1bb2db4"
+  default     = "vpc-d1bb2db4"
 }
 
 variable "vpc_region" {
   description = "VPC region"
-   default = "us-west-2"
+  default     = "us-west-2"
 }
 
 
 variable "hostname" {
   description = "Host name of EC2 Machine"
-  default = "Dev-Test-Instance"
+  default     = "Dev-Test-Instance"
 }
 
 variable "role" {
   description = "Role of the EC2 Machine"
-  default = "Webserver"
+  default     = "Webserver"
 }
 
 variable "xmcc" {
   description = "Cost Center"
-  default = "9243"
+  default     = "9243"
 }
 
 variable "appname" {
   description = "Application Name"
-  default = "ITOPS"
+  default     = "ITOPS"
 }
 
 variable "dpstate" {
   description = "DeploymentState"
-  default = "Dev"
+  default     = "Dev"
 }
 
 
@@ -70,11 +70,11 @@ variable "admin_password" {
 
 variable "subnetid" {
   description = "Provide Instance Subnet"
-  default = "subnet-e3f851ba"
+  default     = "subnet-e3f851ba"
 }
 
 
 variable "useradname" {
   description = "User Corp ID"
-  default = "hhaqqani"
+  default     = "hhaqqani"
 }

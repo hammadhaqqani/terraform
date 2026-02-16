@@ -14,16 +14,10 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
-        continue-on-error: true
-      - name: Terraform Init
+      - name: Terraform Init and Validate
         run: |
           for dir in $(find . -name "*.tf" -not -path "./.terraform/*" -exec dirname {} \; | sort -u); do
-            echo "=== Init $dir ==="
-            terraform -chdir="$dir" init -backend=false 2>/dev/null || true
-          done
-      - name: Terraform Validate
-        run: |
-          for dir in $(find . -name "*.tf" -not -path "./.terraform/*" -exec dirname {} \; | sort -u); do
-            echo "=== Validate $dir ==="
-            terraform -chdir="$dir" validate 2>/dev/null || echo "Skipped $dir (may need providers)"
+            echo "=== $dir ==="
+            terraform -chdir="$dir" init -backend=false
+            terraform -chdir="$dir" validate
           done

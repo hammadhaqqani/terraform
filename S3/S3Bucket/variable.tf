@@ -7,30 +7,30 @@ variable "availability_zone" {
 
 variable "hostname" {
   description = "Host name of EC2 Machine"
-  default = "Dev-Test-Instance"
+  default     = "Dev-Test-Instance"
 }
 
 variable "role" {
   description = "Role of the EC2 Machine"
-  default = "Webserver"
+  default     = "Webserver"
 }
 
 variable "xmcc" {
   description = "Cost Center"
-  default = "9243"
+  default     = "9243"
 }
 
 variable "appname" {
   description = "Application Name"
-  default = "ITOPS"
+  default     = "ITOPS"
 }
 
 variable "dpstate" {
   description = "DeploymentState"
-  default = "Dev"
+  default     = "Dev"
 }
 
 
 variable "bucketname" {
-  description = "S3 Bucket Name"  
+  description = "S3 Bucket Name"
 }

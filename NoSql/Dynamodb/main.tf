@@ -63,11 +63,11 @@ module "dynamodb_table" {
   ]
 
   tags = {
-    Name = var.name
-    Role = var.role
-    XMCC = var.xmcc
-    APPNAME = var.appname
-    DeploymentState = var.dps    
+    Name            = var.name
+    Role            = var.role
+    XMCC            = var.xmcc
+    APPNAME         = var.appname
+    DeploymentState = var.dps
   }
 }
 
