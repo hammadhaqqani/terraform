@@ -1,0 +1,28 @@
+name: Terraform
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+      - name: Terraform Init
+        run: |
+          for dir in $(find . -name "*.tf" -exec dirname {} \; | sort -u); do
+            echo "=== Init $dir ==="
+            terraform -chdir="$dir" init -backend=false
+          done
+      - name: Terraform Validate
+        run: |
+          for dir in $(find . -name "*.tf" -exec dirname {} \; | sort -u); do
+            echo "=== Validate $dir ==="
+            terraform -chdir="$dir" validate
+          done
