@@ -1,6 +1,7 @@
 # Terraform AWS Modules
 
 [![Terraform](https://github.com/hammadhaqqani/terraform/actions/workflows/terraform.yml/badge.svg)](https://github.com/hammadhaqqani/terraform/actions/workflows/terraform.yml)
+[![GitHub Pages](https://github.com/hammadhaqqani/terraform/actions/workflows/pages.yml/badge.svg)](https://hammadhaqqani.github.io/terraform/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Terraform](https://img.shields.io/badge/Terraform-%235835CC.svg?logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
