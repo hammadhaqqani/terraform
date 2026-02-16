@@ -8,11 +8,14 @@ data "aws_vpc" "default" {
 }
 
 data "aws_subnets" "all" {
-  vpc_id = data.aws_vpc.default.id
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default.id]
+  }
 }
 
 data "aws_subnet" "all" {
-  for_each = data.aws_subnets.all.ids
+  for_each = toset(data.aws_subnets.all.ids)
   id       = each.value
 }
 
