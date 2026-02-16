@@ -60,7 +60,8 @@ resource "aws_iam_service_linked_role" "autoscaling" {
 # Launch configuration and autoscaling group
 ######
 module "example" {
-  source = "terraform-aws-modules/autoscaling/aws"
+  source  = "terraform-aws-modules/autoscaling/aws"
+  version = "~> 3.0"
 
   name = "launch-configuration-amzlinux"
 
