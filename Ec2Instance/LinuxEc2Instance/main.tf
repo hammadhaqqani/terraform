@@ -1,11 +1,11 @@
 
 
-data "aws_subnet_ids" "all" {
+data "aws_subnets" "all" {
   vpc_id = var.vpc_id
 }
 
 data "aws_subnet" "all" {
-  for_each = data.aws_subnet_ids.all.ids
+  for_each = data.aws_subnets.all.ids
   id       = each.value
 }
 

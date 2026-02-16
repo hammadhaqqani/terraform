@@ -7,12 +7,12 @@ data "aws_vpc" "default" {
   }
 }
 
-data "aws_subnet_ids" "all" {
+data "aws_subnets" "all" {
   vpc_id = data.aws_vpc.default.id
 }
 
 data "aws_subnet" "all" {
-  for_each = data.aws_subnet_ids.all.ids
+  for_each = data.aws_subnets.all.ids
   id       = each.value
 }
 
@@ -92,7 +92,7 @@ module "example" {
 
   # Auto scaling group
   asg_name                  = "webserver-asg"
-  vpc_zone_identifier       = data.aws_subnet_ids.all.ids
+  vpc_zone_identifier       = data.aws_subnets.all.ids
   health_check_type         = "EC2"
   min_size                  = 0
   max_size                  = 1

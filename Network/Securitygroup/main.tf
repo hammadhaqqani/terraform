@@ -8,12 +8,12 @@ data "aws_vpc" "default" {
   }
 }
 
-data "aws_subnet_ids" "all" {
+data "aws_subnets" "all" {
   vpc_id = data.aws_vpc.default.id
 }
 
 data "aws_subnet" "all" {
-  for_each = data.aws_subnet_ids.all.ids
+  for_each = data.aws_subnets.all.ids
   id       = each.value
 }
 
@@ -62,7 +62,7 @@ module "db" {
   enabled_cloudwatch_logs_exports = ["postgresql", "upgrade"]
 
   # DB subnet group
-  subnet_ids = data.aws_subnet_ids.all.ids
+  subnet_ids = data.aws_subnets.all.ids
 
   # DB parameter group
   family = "postgres9.6"
