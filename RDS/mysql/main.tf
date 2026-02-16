@@ -30,7 +30,7 @@ data "aws_security_group" "default" {
 #####
 module "db" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "~> 6.0"
+  version = "~> 5.0"
 
   identifier = var.identifier
 
