@@ -43,7 +43,7 @@ EOF
 
 module "security_group" {
   source  = "terraform-aws-modules/security-group/aws"
-  version = "~> 3.0"
+  version = "~> 5.0"
 
   name        = "Security group ${var.hostname}"
   description = "Security group for usage with EC2 instance"
@@ -111,7 +111,7 @@ resource "aws_instance" "ec2Instances" {
   associate_public_ip_address = false
   source_dest_check           = false
 
-  vpc_security_group_ids = [module.security_group.this_security_group_id]
+  vpc_security_group_ids = [module.security_group.security_group_id]
 
   user_data_base64 = base64encode(local.user_data)
 

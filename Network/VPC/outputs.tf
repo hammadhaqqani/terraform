@@ -41,22 +41,6 @@ output "nat_public_ips" {
   value       = module.vpc.nat_public_ips
 }
 
-# VPC endpoints
-output "vpc_endpoint_ssm_id" {
-  description = "The ID of VPC endpoint for SSM"
-  value       = module.vpc.vpc_endpoint_ssm_id
-}
-
-output "vpc_endpoint_ssm_network_interface_ids" {
-  description = "One or more network interfaces for the VPC Endpoint for SSM."
-  value       = module.vpc.vpc_endpoint_ssm_network_interface_ids
-}
-
-output "vpc_endpoint_ssm_dns_entry" {
-  description = "The DNS entries for the VPC Endpoint for SSM."
-  value       = module.vpc.vpc_endpoint_ssm_dns_entry
-}
-
 # Customer Gateway
 output "cgw_ids" {
   description = "List of IDs of Customer Gateway"
@@ -67,20 +51,3 @@ output "this_customer_gateway" {
   description = "Map of Customer Gateway attributes"
   value       = module.vpc.this_customer_gateway
 }
-
-//
-//# VPC endpoints
-//output "vpc_endpoint_ec2_id" {
-//  description = "The ID of VPC endpoint for EC2"
-//  value       = "${module.vpc.vpc_endpoint_ec2_id}"
-//}
-//
-//output "vpc_endpoint_ec2_network_interface_ids" {
-//  description = "One or more network interfaces for the VPC Endpoint for EC2."
-//  value = ["${module.vpc.vpc_endpoint_ec2_network_interface_ids}"]
-//}
-//
-//output "vpc_endpoint_ec2_dns_entry" {
-//  description = "The DNS entries for the VPC Endpoint for EC2."
-//  value = ["${module.vpc.vpc_endpoint_ec2_dns_entry}"]
-//}
